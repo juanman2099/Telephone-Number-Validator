@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+  --bg: #1c1f2b;
+  --phone-bg: #f4f4f4;
+  --primary: #333;
+  --accent: #007bff;
+  --success: #28a745;
+  --danger: #dc3545;
+  --border-radius: 12px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 1rem;
+  color: white;
+  flex-direction: column;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: white;
+}
+
+.container {
+  background-color: var(--phone-bg);
+  width: 300px;
+  padding: 2rem 1.5rem;
+  border-radius: 25px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  border: 4px solid #222;
+  position: relative;
+}
+
+.container::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  background-color: #555;
+  border-radius: 50%;
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: var(--primary);
+}
+
+#user-input {
+  width: 100%;
+  padding: 0.6rem;
+  font-size: 1rem;
+  border-radius: var(--border-radius);
+  border: 1px solid #ccc;
+  margin-bottom: 1rem;
+}
+
+#results-div {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: var(--primary);
+  min-height: 1.2rem;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+button {
+  flex: 1;
+  padding: 0.6rem;
+  font-weight: bold;
+  font-size: 1rem;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#check-btn {
+  background-color: var(--accent);
+  color: white;
+}
+
+#check-btn:hover {
+  background-color: #0056b3;
+}
+
+#clear-btn {
+  background-color: #bbb;
+}
+
+#clear-btn:hover {
+  background-color: #999;
+}
+
+.valid {
+  color: var(--success);
+}
+
+.invalid {
+  color: var(--danger);
+}
+
+@media (max-width: 400px) {
+  .container {
+    width: 90%;
+  }
+}
